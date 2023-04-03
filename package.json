@@ -1,12 +1,12 @@
 {
   "name": "practicetest0",
   "version": "1.0.0",
-  "description": "My first Project",
+  "description": "My BBC Test Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ami P",
+  "author": "Ami",
   "license": "ISC",
   "dependencies": {
     "cypress": "^12.8.1"

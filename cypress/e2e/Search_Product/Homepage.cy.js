@@ -1,4 +1,4 @@
-const { contains } = require("cypress/types/jquery");
+//const { contains } = require("cypress/types/jquery");
 
 describe('Search the  Product', () => {
     before(function () {
@@ -6,16 +6,14 @@ describe('Search the  Product', () => {
         cy.visit('https://www.bbc.co.uk')
         cy.wait(1000);
         cy.get('.ssrcss-bcdah5-ConsentButton').click()
-
-        cy.fixture('example').then(function (data) {
-            this.data1 = data
-        })
+        cy.wait(1000);
 
     })
 
 
     it('Search', () => {
         cy.get('.ssrcss-13qfcv5-NavigationLink-SearchLink').click()
+        cy.wait(1000);
         cy.get('[data-testid="test-search-input"]').type("putin")
         cy.get('[data-testid="test-search-submit"]').click()
         cy.wait(1000);
@@ -25,18 +23,12 @@ describe('Search the  Product', () => {
 
         cy.get('ul>li').find('.ssrcss-53phst-Promo.ett16tt0').each
             (($el, index, $list) => {
-                const txtproduct = $el.find('p.ssrcss-6arcww-PromoHeadline.e1f5wbog5').should
+                const txtproduct = $el.find('p.ssrcss-6arcww-PromoHeadline.e1f5wbog5').text()
 
-
-                (contains.text,'putin')
-               // text()
-                
                 //prints in testrunner
                 cy.log(txtproduct)
 
-                if (txtproduct.includes('putin')) {
-                    cy.log("text is" + txtproduct)
-                }
+
             })
     })
 })
