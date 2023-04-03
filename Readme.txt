@@ -1,6 +1,3 @@
-
-
-
 How to run code document
 Install nodeJS on your machine.
 Install VS code
